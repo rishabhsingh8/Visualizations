@@ -1,0 +1,148 @@
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+    <title>Visualize</title>
+
+    <!-- Basic dependencies (JQuery/Bootstrap/Fonts) -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Cousine&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <!-- File Pond for uploading data files -->
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
+    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+
+    <!-- CodeMirror for code editing-->
+    <link href="css/codemirror.css" rel="stylesheet" type="text/css">
+    <link href="css/codemirror-custom.css" rel="stylesheet" type="text/css">
+    <script src="js/codemirror.js"></script>
+    <script src="js/mode/javascript.js"></script>
+
+    <!-- MetricsGraphics + D3 -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link href="css/mg.css" rel="stylesheet" type="text/css">
+    <script type="module" src="js/index.js"></script>
+
+    <!-- Custom page styling -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom page JS -->
+    <script type="module" src='js/main.js'></script>
+</head>
+
+<body>
+    <div class='container'>
+        <div class='head'>
+            <ul>
+                <li>
+                    <h4>Visualize</h4>
+                </li>
+            </ul>
+            <div class="reportDate">built using
+                <a href="https://metricsgraphicsjs.org/">metricsgraphics</a>,
+                <a href="https://pqina.nl/filepond/">filepond</a>, &
+                <a href="https://codemirror.net/">codemirror</a>.
+            </div>
+        </div>
+
+        <div id='trunk'>
+
+            <table>
+                <tr>
+                    <td>
+                        <!-- Data upload pane -->
+                        <div class="sectorTitle">Upload Data</div>
+                        <!-- <div class="topSeparater"></div> -->
+                        <div id="dataSection" class="content">
+                            <input type="file" multiple class="filepond" id="files">
+                        </div>
+
+                        <!-- Code pane -->
+                        <div class="sectorTitle">Process & Render</div>
+                        <!-- <div class="topSeparater"></div> -->
+                        <div id="codeSnippet" class="content">
+                            <form>
+                                <textarea id=codetext></textarea>
+                            </form>
+                        </div>
+                        <div class="content" style="text-align: right;">
+                            <a href="#" id="refreshVisualization" class="pill">
+                                Update 
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="visualizationPane">
+                            <!-- Visualization pane -->
+                            <div id="graphTitle" class="sectorTitle"></div>
+                            <div id="graphDescription"></div>
+                            <!-- <div class="topSeparater"></div> -->
+                            <div class="visualization content">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- Default Code Snippet -->
+<textarea id="defaultCodeSnippet" style="display: none;">
+/* Use this area to leverage datasets and render your chart */
+
+// Grab the data from the above datasets
+var myData = window.getDataset('ufosightings.json').data;
+
+// Set graph title
+window.setGraphTitle('The Rise of UFO Sightings');
+
+// Set graph description
+window.setGraphDescription('According to <a href="https://www.reuters.com/article/us-britain-ufo/ufo-sightings-may-have-been-down-to-x-files-idUSTRE57G2EU20090817">reuters</a>, UFO sightings may be correlated with the rise in popularity of television shows like X-Files.');
+
+// Construct the chart
+new LineChart({
+    // Which data to plot
+    data: [myData],
+
+    // Height & Width of the chart
+    width: 650,
+    height: 250,
+
+    // Which div to target
+    target: '.visualization',
+    
+    // Key to access X values
+    xAccessor: 'year',
+    // Key to access Y values
+    yAccessor: 'sightings',
+
+    // Show area under line?
+    area: true,
+
+    // Customize x-axis
+    xAxis: {
+        extendedTicks: false,
+        label: 'Year',
+        tickFormat: '.4r'
+    },
+    // Customize y-axis
+    yAxis: {
+        label: 'UFO Sightings'
+    },
+
+    // Customize colors of lines
+    colors: ['#5B75CF', '#22C55D', '#A855F7'],
+
+    // Highlight values along the x-axis
+    markers: [{ year: 1993, label: '"X-Files" released' }],
+    // Highlight values along the y-axis
+    // baselines: [{ sightings: 500, label: '500 sightings' }],
+})
+</textarea>
