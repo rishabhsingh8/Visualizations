@@ -187,3 +187,7 @@ td {
     max-width: 500px;
     padding-bottom: 25px;
 }
+
+.filepond--file-status-main {
+    margin-top: 6px;
+}
