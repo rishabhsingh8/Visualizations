@@ -49,10 +49,6 @@ function BuildFileUploadZone() {
             // Allow multiple files
             allowMultiple: true,
 
-            // Once uploaded, you've uploaded.
-            allowRevert: false,
-            allowRemove: false,
-
             // Match the global array
             itemInsertLocation: 'after',
 
@@ -91,6 +87,7 @@ function BuildFileUploadZone() {
 
             labelIdle: '<span class="filepond--label-action">Upload</span> more json datasets.',
             labelFileProcessingComplete: 'Dataset ready',
+            labelTapToUndo: 'tap to remove'
         }
     );
 
