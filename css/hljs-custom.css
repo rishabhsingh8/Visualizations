@@ -1,89 +1,88 @@
-.CodeMirror {
-    height: auto;
-    /* border: 1px solid #ddd;  */
-    background-color: #F5F7FE;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 11.2px;
-    font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'Cousine', monospace;
-}
-
-.CodeMirror-scroll {
-    max-height: 20%;
-}
-
-.CodeMirror pre {
+.hljs pre {
     padding-left: 7px;
     line-height: 1.25;
 }
 
-.CodeMirror-gutters {
+.hljs-gutters {
     border-right: 0px;
     background-color: #F5F7FE;
     white-space: nowrap;
     padding-right: 5px;
 }
 
-.CodeMirror-linenumbers {
+.hljs-linenumbers {
     background-color: #F5F7FE;
     color: #6E7781;
 }
 
-.cm-s-default .cm-constant {
+.hljs .hljs-constant {
     color: #0350AE;
 }
 
-.cm-s-default .cm-entity {
+.hljs .hljs-entity {
     font-weight: normal;
     font-style: normal;
     text-decoration: none;
     color: #8250DF;
 }
 
-.cm-s-default .cm-keyword {
+.hljs .hljs-keyword {
     font-weight: normal;
     font-style: normal;
     text-decoration: none;
     color: #3C82F6;
 }
 
-.cm-s-default .cm-storage {
+.hljs .hljs-storage {
     color: #CF2030;
 }
 
-.cm-s-default .cm-string {
+.hljs .hljs-string {
     font-weight: normal;
     font-style: normal;
     text-decoration: none;
     color: #8250DF;
 }
 
-.cm-s-default .cm-support {
+.hljs .hljs-support {
     font-weight: normal;
     font-style: normal;
     text-decoration: none;
     color: #0350AE;
 }
 
-.cm-s-default .cm-variable {
+.hljs .hljs-title {
     font-weight: normal;
     font-style: normal;
     text-decoration: none;
     color: #EC4899;
 }
 
-.cm-s-default .cm-property {
+.hljs .hljs-attr {
     color: #22C55D;
 }
 
-.cm-s-default .cm-def {
+.hljs .hljs-def {
     color: #374151;
 }
 
-.cm-s-default .cm-number {
+.hljs .hljs-number,
+.hljs .hljs-literal {
     color: #22C55D;
 }
 
-.cm-s-default .cm-operator {
+.hljs .hljs-operator {
     color: #EBB305;
+}
+
+.hljs .hljs-comment {
+    color: #956648;
+}
+
+pre,
+code {
+    background-color: #F5F7FE !important;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.79em !important;
 }

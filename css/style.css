@@ -68,33 +68,28 @@ html {
     font-size: 12px;
 }
 
-p {
-    font-family: 'PT Serif', serif;
-    font-size: 1.3rem;
-    line-height: 24px;
-}
-
 .pill {
-    font-family: 'Open Sans', serif;
-    font-size: 1.1rem;
-    text-transform: uppercase;
+    /* font-family: 'Open Sans', serif; */
+    font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'Cousine', monospace;
+    font-size: 0.9rem;
+    text-transform: lowercase;
     padding: 4px 8px 4px 8px;
     transition-duration: 200ms;
     /* text-transform: lowercase; */
     border-radius: 4px;
-    background-color: #5b75cf;
-    font-weight: bold;
-    color: #fff !important;
+    background-color: #eee;
+    /* font-weight: bold; */
+    color: #333 !important;
 }
 
 .pill:hover {
-    text-decoration: none;
-    background-color: #4e63b1;
+    /* text-decoration: none; */
+    background-color: rgb(228, 226, 226);
     border: 0;
     border-radius: 4px;
-    /* color: black !important; */
+    color: #111 !important;
     padding: 4px 8px 4px 8px;
-    text-decoration: none;
+    /* text-decoration: none; */
     /* text-transform: lowercase; */
 }
 
@@ -137,8 +132,7 @@ h4 {
 }
 
 #files {
-    height: 150px;
-    margin-top: 20px;
+    min-height: 150px;
 }
 
 .filepond--root {
@@ -160,6 +154,8 @@ h4 {
     position: relative;
     margin-top: 15px;
     margin-right: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 #codeSnippet {
@@ -179,11 +175,175 @@ td {
     vertical-align: baseline;
     margin-left: 15px;
     margin-right: 15px;
-    padding: 15px;
 }
 
 #graphDescription {
     font-size: 0.79em;
     max-width: 500px;
     padding-bottom: 25px;
+}
+
+#buildSectionInfo {
+    font-size: 0.79em;
+    max-width: 500px;
+}
+
+.form-label {
+    color: #74808B;
+    font-size: 0.79em;
+    padding-bottom: 5px;
+    display: inline-block;
+    padding-top: 5px;
+}
+
+.form-input {
+    display: block;
+    padding: 0.375rem 0.75rem;
+    width: 80%;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4C5A67;
+    background-color: #F4F5F6;
+    background-clip: padding-box;
+    border: 1px solid #F4F5F6;
+    border-radius: 0.375rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-input-slim {
+    width: 20%;
+}
+
+.form-input-long {
+    width: 100%;
+}
+
+.form-input-tall {
+    height: 80px;
+}
+
+.form-input:focus {
+    background-color: #EEF0F2;
+    outline: none !important;
+}
+
+#dataUploadAndProcessTable td {
+    width: 50%;
+}
+
+
+/* Table formatting */
+
+.objecttable tr th {
+    /* background: #222;
+    color: #fff; */
+    /* padding: 0; */
+    /* border: #111 solid 1px; */
+    text-align: center;
+    font-weight: bold;
+    /* padding: 5px; */
+}
+
+.objecttable tr td,
+th {
+    border: 1px #ccc solid;
+    padding: 5px;
+}
+
+.objecttable tr td.rightright {
+    background: #eee;
+}
+
+.objecttable tr td h4 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+.objecttable {
+    margin-bottom: 2em;
+    width: 100%;
+    font-size: 0.79em;
+    /* border-radius: 10px; */
+}
+
+.objecttable th {
+    /* border-bottom: 2px solid #ccc; */
+    font-weight: bold;
+    text-align: center;
+}
+
+.objecttable td {
+    border-bottom: 1px solid #ddd;
+    padding: 6px 13px !important;
+}
+
+.objecttable tbody tr:nth-child(even) {
+    background-color: #F6F8FA;
+}
+
+.objecttable caption,
+.objecttable th,
+.objecttable td {
+    padding: 4px 10px 4px 0;
+}
+
+.objecttable caption {
+    background: #f1f1f1;
+    padding: 10px 0;
+    margin-bottom: 1em;
+}
+
+.objecttable tr,
+.objecttable td,
+.objecttable th {
+    vertical-align: middle;
+}
+
+.objecttable .last {
+    padding-right: 0;
+}
+
+.objecttable pre {
+    display: block;
+    padding: 5px;
+    margin-bottom: 0px;
+    font-size: 0.79em;
+    line-height: 1;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #EFF1F2;
+    border: 0px solid #ccc;
+    border-radius: 4px;
+    vertical-align: middle;
+    width: fit-content;
+}
+
+.objecttable .objectcode {
+    display: block;
+    font-size: 0.79em;
+    word-break: break-all;
+    word-wrap: break-word;
+    font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'Cousine', monospace;
+}
+
+.ui-editable:hover {
+    border-bottom: 2px solid #999;
+    transition-duration: 100ms;
+}
+
+.ui-editable:focus {
+    outline: 2px solid #999;
+}
+
+.ui-editable-editing {
+    background-color: white;
+    transition-duration: 100ms;
+    font-size: 1.2em !important;
+}
+
+.tippy-box {
+    font-size: 0.91em;
 }
